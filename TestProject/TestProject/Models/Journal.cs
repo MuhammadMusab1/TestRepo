@@ -12,6 +12,5 @@ namespace TestProject.Models
         public int UserNumber { get; set; }
         [ForeignKey("UserNumber")]
         public User User { get; set; }
-
     }
 }

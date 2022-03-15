@@ -16,5 +16,6 @@ namespace TestProject.Data
         }
 
         public DbSet<User> User { get; set; }
+        public DbSet<Journal> Journal { get; set; }
     }
 }
