@@ -10,6 +10,11 @@ namespace TestProject.Models
         public string FirstName { get; set; }
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Name has to have more than 3 characters and fewer than 100")]
         public string LastName { get; set; }
+        public ICollection<Journal> Journals { get; set; }
+        public User()
+        {
+            Journals = new HashSet<Journal>();
+        }
     }
 }
 
