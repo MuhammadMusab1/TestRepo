@@ -12,3 +12,18 @@ namespace TestProject.Models
         public string LastName { get; set; }
     }
 }
+
+
+/*
+
+I want to have one person initialize the project, and another team member pull that project, and 
+create a new branch to add second and third classes.
+
+One member should create the first class and scaffold the context
+The second member should create a new branch and add the second and third classes, and annotate them.
+
+They should then merge those changes to the Main branch.
+
+The first student will then pull those changes after they are pushed.
+
+ */
