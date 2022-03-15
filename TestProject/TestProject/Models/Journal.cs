@@ -12,5 +12,11 @@ namespace TestProject.Models
         public int UserNumber { get; set; }
         [ForeignKey("UserNumber")]
         public User User { get; set; }
+        [ForeignKey("JournalNumber")]
+        public ICollection<Comment> Comments { get; set; }
+        public Journal()
+        {
+            Comments = new HashSet<Comment>();
+        }
     }
 }

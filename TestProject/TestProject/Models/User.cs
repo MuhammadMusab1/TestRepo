@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TestProject.Models
 {
@@ -11,9 +12,12 @@ namespace TestProject.Models
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Name has to have more than 3 characters and fewer than 100")]
         public string LastName { get; set; }
         public ICollection<Journal> Journals { get; set; }
+        [ForeignKey("UserNumber")]
+        public ICollection<Comment> Comments { get; set; }
         public User()
         {
             Journals = new HashSet<Journal>();
+            Comments = new HashSet<Comment>();
         }
     }
 }
