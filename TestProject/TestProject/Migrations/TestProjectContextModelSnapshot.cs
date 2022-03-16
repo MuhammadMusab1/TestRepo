@@ -49,7 +49,7 @@ namespace TestProject.Migrations
 
                     b.HasIndex("UserNumber");
 
-                    b.ToTable("Comment");
+                    b.ToTable("Comment", (string)null);
                 });
 
             modelBuilder.Entity("TestProject.Models.Journal", b =>
@@ -79,7 +79,7 @@ namespace TestProject.Migrations
 
                     b.HasIndex("OwnerUserNumber");
 
-                    b.ToTable("Journal");
+                    b.ToTable("Journal", (string)null);
                 });
 
             modelBuilder.Entity("TestProject.Models.User", b =>
@@ -102,7 +102,7 @@ namespace TestProject.Migrations
 
                     b.HasKey("UserNumber");
 
-                    b.ToTable("User");
+                    b.ToTable("User", (string)null);
                 });
 
             modelBuilder.Entity("TestProject.Models.Comment", b =>

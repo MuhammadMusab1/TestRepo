@@ -8,6 +8,8 @@ namespace TestProject.Models
         [Key]
         public int JournalNumber { get; set; }
         public string Entry { get; set; }
+        [DataType(DataType.Date)] //will only give the date
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode =true)]
         public DateTime DateWritten { get; set; }
         public int OwnerUserNumber { get; set; } //the system wants to have it written like this 
         public int? EditorUserNumber { get; set; }
