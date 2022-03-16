@@ -11,12 +11,16 @@ namespace TestProject.Models
         public string FirstName { get; set; }
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Name has to have more than 3 characters and fewer than 100")]
         public string LastName { get; set; }
+        [InverseProperty("Owner")] //name of the object
         public ICollection<Journal> Journals { get; set; }
+        [InverseProperty("Editor")]//name of the object
+        public ICollection<Journal> EditedJournals { get; set; }
         [ForeignKey("UserNumber")]
         public ICollection<Comment> Comments { get; set; }
         public User()
         {
             Journals = new HashSet<Journal>();
+            EditedJournals = new HashSet<Journal>();
             Comments = new HashSet<Comment>();
         }
     }
