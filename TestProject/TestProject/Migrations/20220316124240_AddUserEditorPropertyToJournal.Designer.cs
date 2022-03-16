@@ -12,7 +12,7 @@ using TestProject.Data;
 namespace TestProject.Migrations
 {
     [DbContext(typeof(TestProjectContext))]
-    [Migration("20220316123147_AddUserEditorPropertyToJournal")]
+    [Migration("20220316124240_AddUserEditorPropertyToJournal")]
     partial class AddUserEditorPropertyToJournal
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -65,7 +65,7 @@ namespace TestProject.Migrations
                     b.Property<DateTime>("DateWritten")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("EditorUserNumber")
+                    b.Property<int?>("EditorUserNumber")
                         .HasColumnType("int");
 
                     b.Property<string>("Entry")
@@ -128,9 +128,7 @@ namespace TestProject.Migrations
                 {
                     b.HasOne("TestProject.Models.User", "Editor")
                         .WithMany("EditedJournals")
-                        .HasForeignKey("EditorUserNumber")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EditorUserNumber");
 
                     b.HasOne("TestProject.Models.User", "Owner")
                         .WithMany("Journals")

@@ -26,8 +26,7 @@ namespace TestProject.Migrations
                 name: "EditorUserNumber",
                 table: "Journal",
                 type: "int",
-                nullable: false,
-                defaultValue: 0);
+                nullable: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Journal_EditorUserNumber",
@@ -39,8 +38,7 @@ namespace TestProject.Migrations
                 table: "Journal",
                 column: "EditorUserNumber",
                 principalTable: "User",
-                principalColumn: "UserNumber",
-                onDelete: ReferentialAction.Cascade);
+                principalColumn: "UserNumber");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Journal_User_OwnerUserNumber",
