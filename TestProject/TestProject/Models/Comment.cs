@@ -10,8 +10,8 @@ namespace TestProject.Models
         public string CommentText { get; set; }
         public DateTime CommentDate { get; set; }
         public int JournalNumber { get; set; }
-        public int UserNumber { get; set; }
-        public User User { get; set; }
+        public int? UserNumber { get; set; }
+        public User? User { get; set; }
         public Journal Journal { get; set; }
     }
 }

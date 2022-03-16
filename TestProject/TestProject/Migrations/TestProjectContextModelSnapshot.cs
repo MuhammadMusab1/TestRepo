@@ -40,7 +40,7 @@ namespace TestProject.Migrations
                     b.Property<int>("JournalNumber")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserNumber")
+                    b.Property<int?>("UserNumber")
                         .HasColumnType("int");
 
                     b.HasKey("CommentNumber");
@@ -110,9 +110,7 @@ namespace TestProject.Migrations
 
                     b.HasOne("TestProject.Models.User", "User")
                         .WithMany("Comments")
-                        .HasForeignKey("UserNumber")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserNumber");
 
                     b.Navigation("Journal");
 

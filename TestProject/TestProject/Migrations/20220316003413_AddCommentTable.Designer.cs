@@ -12,7 +12,7 @@ using TestProject.Data;
 namespace TestProject.Migrations
 {
     [DbContext(typeof(TestProjectContext))]
-    [Migration("20220315234213_AddCommentTable")]
+    [Migration("20220316003413_AddCommentTable")]
     partial class AddCommentTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,7 +42,7 @@ namespace TestProject.Migrations
                     b.Property<int>("JournalNumber")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserNumber")
+                    b.Property<int?>("UserNumber")
                         .HasColumnType("int");
 
                     b.HasKey("CommentNumber");
@@ -112,9 +112,7 @@ namespace TestProject.Migrations
 
                     b.HasOne("TestProject.Models.User", "User")
                         .WithMany("Comments")
-                        .HasForeignKey("UserNumber")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserNumber");
 
                     b.Navigation("Journal");
 

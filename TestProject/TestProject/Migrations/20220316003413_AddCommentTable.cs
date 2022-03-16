@@ -18,7 +18,7 @@ namespace TestProject.Migrations
                     CommentText = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CommentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     JournalNumber = table.Column<int>(type: "int", nullable: false),
-                    UserNumber = table.Column<int>(type: "int", nullable: false)
+                    UserNumber = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -33,8 +33,7 @@ namespace TestProject.Migrations
                         name: "FK_Comment_User_UserNumber",
                         column: x => x.UserNumber,
                         principalTable: "User",
-                        principalColumn: "UserNumber",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "UserNumber");
                 });
 
             migrationBuilder.CreateIndex(
