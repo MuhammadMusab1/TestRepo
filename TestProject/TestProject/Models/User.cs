@@ -35,4 +35,17 @@ They should then merge those changes to the Main branch.
 
 The first student will then pull those changes after they are pushed.
 
+Second Half:
+Before you start, make sure that whoever owns the repository has merged in the branch of our last of work into main
+
+Add a new type of User to the relation of each journal called an Editor, 
+so that Users have a list of Journals that they Edit and Journals that they own
+
+Also each Journal should track the day that it was created, 
+and that should appear in a day-month-year format.
+
+Create a new branch for this set of features. 
+And have anyone who does not own the repository merge the new changes into the main branch 
+and update their database to reflect those changes.
+
  */
